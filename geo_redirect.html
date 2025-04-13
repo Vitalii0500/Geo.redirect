@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Redirecting...</title>
+  <script>
+    async function redirectByCountry() {
+      try {
+        const res = await fetch('https://ipapi.co/json/');
+        const data = await res.json();
+        const country = data.country;
+
+        let url = "https://1wdgx.com";  // Default fallback
+
+        if (country === "UA") {
+          url = "https://1wjaov.top/casino/list?open=register&p=oh9m";
+        } else if (country === "RU") {
+          url = "https://1wqjnb.com/casino/list?open=register&p=p7pl";
+        }
+
+        window.location.href = url;
+      } catch (err) {
+        window.location.href = "https://1wdgx.com";  // Fallback on error
+      }
+    }
+
+    redirectByCountry();
+  </script>
+</head>
+<body>
+  <h1>Redirecting...</h1>
+  <p>If you are not redirected automatically, <a id="manualLink" href="#">click here</a>.</p>
+  <script>
+    document.getElementById("manualLink").href = window.location.href;
+  </script>
+</body>
+</html>
